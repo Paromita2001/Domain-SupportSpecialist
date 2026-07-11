@@ -71,6 +71,27 @@ that step cap. Goal: shift the model's internal vocabulary and tone toward the
 support domain before it ever sees a question-answer pair. Adapter saved to
 `adapters/stage1_non_instruction/`.
 
+Actual per-step training loss from this run:
+
+| Step | Training Loss |
+|---|---|
+| 5 | 1.939523 |
+| 10 | 2.025378 |
+| 15 | 1.705911 |
+| 20 | 1.527913 |
+| 25 | 1.488091 |
+| 30 | 1.312090 |
+| 35 | 1.178858 |
+| 40 | 1.151445 |
+| 45 | 1.196575 |
+| 50 | 0.952569 |
+| 55 | 1.014675 |
+| 60 | 1.026075 |
+
+Loss trends down overall (1.94 → ~1.0) with a bit of noise along the way
+(a small bump at step 10 and again at step 45) — expected for a short,
+184-example warm-up run rather than a smooth curve.
+
 ## 7. Instruction fine-tuning approach
 `notebooks/instruction_finetuning.ipynb`. Loads the Stage-1 adapter as its
 starting point, formats all 200 instruction/response pairs through the model's
