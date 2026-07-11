@@ -1,4 +1,4 @@
-# Domain-SupportSpecialist — A Domain-Tuned Customer Support Assistant
+# Domain-SupportSpecialist : A Domain-Tuned Customer Support Assistant
 ### Three-stage LLM fine-tuning with Unsloth: Non-Instruction FT → SFT → DPO
 
 ## 1. Domain selected
