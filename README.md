@@ -99,6 +99,22 @@ chat template, and trains for 3 full epochs (75 steps). This is the stage that
 actually teaches the model to answer a support question directly instead of
 just sounding right. Adapter saved to `adapters/stage2_sft/`.
 
+Actual per-step training loss from this run:
+
+| Step | Training Loss |
+|---|---|
+| 10 | 1.576857 |
+| 20 | 0.987686 |
+| 30 | 0.887399 |
+| 40 | 0.795725 |
+| 50 | 0.741381 |
+| 60 | 0.674428 |
+| 70 | 0.648318 |
+
+A clean, steady drop from 1.58 → 0.65 across 70 steps — smoother than
+Stage 1's, as expected once the model is learning an actual structured task
+(question → answer) instead of just absorbing tone from raw paragraphs.
+
 ## 8. DPO alignment approach
 `notebooks/dpo_alignment.ipynb`. Loads the Stage-2 SFT adapter, attaches a
 fresh LoRA specifically for this stage, and trains on all 100 preference
@@ -109,6 +125,28 @@ the model sees a chosen-vs-rejected pair for the same question and is nudged
 toward the chosen one — catching vague or evasive answers that SFT alone
 didn't fully remove. Adapter saved to `adapters/stage3_dpo/` — this is the
 **final, deployed model**.
+
+Actual per-step training log from this run:
+
+| Step | Loss | rewards/chosen | rewards/rejected | rewards/accuracies | rewards/margins |
+|---|---|---|---|---|---|
+| 5 | 0.027146 | 7.976250 | -0.345975 | 1.000000 | 8.322226 |
+| 10 | 0.016372 | 7.120978 | -0.476447 | 1.000000 | 7.597425 |
+| 15 | 0.030889 | 8.782237 | -0.559537 | 1.000000 | 9.341775 |
+| 20 | 0.024401 | 7.620154 | -0.616968 | 1.000000 | 8.237123 |
+| 25 | 0.008479 | 8.730283 | -0.555615 | 1.000000 | 9.285896 |
+
+What these columns actually mean: `rewards/chosen` is how strongly the model
+now favors the "good" answer, `rewards/rejected` is how strongly it favors
+the "bad" one (correctly negative throughout — it's being pushed away from
+those). `rewards/accuracies = 1.000000` on every logged step means the model
+ranked the chosen answer above the rejected one on 100% of training examples
+in that batch. `rewards/margins` (the gap between chosen and rejected) stays
+large and positive throughout (~7.6–9.3), and training loss is already very
+low and near-zero variance by step 25 — DPO converged quickly on this
+100-example preference set, which is expected for a small, clean dataset
+(see Section 12 for what this does and doesn't prove about real-world
+answer quality).
 
 ## 9. LoRA / QLoRA configuration
 | Setting | Value |
