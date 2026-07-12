@@ -86,7 +86,7 @@ Actual per-step training loss from this run:
 | 45 | 1.196575 |
 | 50 | 0.952569 |
 | 55 | 1.014675 |
-| 60 | 1.026075 |
+| 60 | 1.026165 |
 
 Loss trends down overall (1.94 → ~1.0) with a bit of noise along the way
 (a small bump at step 10 and again at step 45) — expected for a short,
@@ -103,13 +103,13 @@ Actual per-step training loss from this run:
 
 | Step | Training Loss |
 |---|---|
-| 10 | 1.576857 |
-| 20 | 0.987686 |
-| 30 | 0.887399 |
-| 40 | 0.795725 |
-| 50 | 0.741381 |
-| 60 | 0.674428 |
-| 70 | 0.648318 |
+| 10 | 1.576835 |
+| 20 | 0.987578 |
+| 30 | 0.887322 |
+| 40 | 0.795715 |
+| 50 | 0.741301 |
+| 60 | 0.674441 |
+| 70 | 0.648279 |
 
 A clean, steady drop from 1.58 → 0.65 across 70 steps — smoother than
 Stage 1's, as expected once the model is learning an actual structured task
@@ -130,11 +130,11 @@ Actual per-step training log from this run:
 
 | Step | Loss | rewards/chosen | rewards/rejected | rewards/accuracies | rewards/margins |
 |---|---|---|---|---|---|
-| 5 | 0.027122 | 7.976673 | -0.346258 | 1.000000 | 8.322931 |
-| 10 | 0.016365 | 7.120435 | -0.476984 | 1.000000 | 7.597420 |
-| 15 | 0.030957 | 8.781938 | -0.560052 | 1.000000 | 9.341990 |
-| 20 | 0.024412 | 7.617857 | -0.617353 | 1.000000 | 8.235210 |
-| 25 | 0.008485 | 8.730375 | -0.554893 | 1.000000 | 9.285269 |
+| 5 | 0.027140 | 7.974957 | -0.345100 | 1.000000 | 8.320057 |
+| 10 | 0.016368 | 7.121417 | -0.476804 | 1.000000 | 7.598220 |
+| 15 | 0.030937 | 8.780620 | -0.559783 | 1.000000 | 9.340404 |
+| 20 | 0.024462 | 7.618055 | -0.616924 | 1.000000 | 8.234980 |
+| 25 | 0.008460 | 8.730494 | -0.555098 | 1.000000 | 9.285591 |
 
 What these columns actually mean: `rewards/chosen` is how strongly the model
 now favors the "good" answer, `rewards/rejected` is how strongly it favors
@@ -184,58 +184,74 @@ by hand — in `reports/base_model_evaluation.md`, `reports/sft_model_comparison
 and `reports/final_evaluation.md`.
 
 **Final tally across the 10 fixed test questions:**
-- Base vs SFT: **SFT wins 8/10**, Base wins 2/10 — not ties, genuine Base
-  wins on two specific rows (see below).
-- Base vs SFT vs DPO: **DPO wins 7/10**, SFT wins 2/10, Base wins 1/10 — not a
-  perfect sweep, by design (see below).
+- Base vs SFT: **SFT wins 7/10**, Base wins 3/10 — not ties, three genuine
+  Base wins (see `reports/sft_model_comparison.md`).
+- Base vs SFT vs DPO: **DPO wins 6/10**, SFT wins 3/10, Base wins 1/10 — not
+  a perfect sweep, by design (see below).
+
+Generation is stochastic (temperature 0.7), so these numbers come from one
+full rerun of all three stages — a different run on the same data/config
+can land on slightly different exact wins per row, even though the overall
+pattern (fine-tuning helps on most rows, not literally every row) holds.
 
 **Q: "How long does a refund take to appear on my card?"**
-- *Base:* punts entirely — refuses to engage and redirects to the customer's
-  own bank.
-- *DPO:* gives a concrete number (7–14 business days for card refunds) — the
-  only one of the three with an actual figure attached.
+- *Base:* explains generic banking factors without ever giving an actual
+  number or timeframe.
+- *DPO:* gives the same vague "a few business days" as SFT, but adds a real
+  phone number, hours, and Live Chat/website for follow-up.
 
 **Q: "My package says delivered but I never received it, what do I do?"**
-- *Base* wins this row in both comparisons — it offers concrete
-  troubleshooting steps (check delivery status, contact the shipping
-  carrier), while both SFT and DPO only ask for a tracking number without
-  giving any guidance first. An honest example of fine-tuning *not*
-  improving every case.
+- *DPO* wins this row — it names our actual portal's "Tracking" section and
+  gives a real phone number/hours before cutting off. *Base* is actually
+  more complete here (5 full steps), but reads as generic third-party
+  courier advice rather than our own voice; *SFT* doesn't answer at all, it
+  just asks for a tracking number.
+
+**Q: "The item I received is damaged, what are my options?"**
+- *SFT* wins this row — it delivers 4 complete, concrete options
+  (replacement, refund, in-store pickup, phone support with real hours).
+  *DPO* asks for more details before committing to anything; *Base* uses
+  marketplace-style "contact the seller" language, as if we're a platform
+  rather than the retailer itself.
 
 **Q: "I was charged twice for one order, how do I fix this?"**
-- *SFT* actually gives a **misleading** fix here — it tells the customer to
-  click "Edit Order," which wouldn't undo a duplicate charge at all.
-  *DPO* catches this and instead points to a phone/Live Chat contact to
-  investigate — less procedurally detailed, but the more accurate answer.
-  A genuinely useful example of DPO correcting a real SFT mistake, not just
-  making answers sound nicer.
+- *Base*'s real flaw here — it tells the customer to contact **their own
+  bank's** support instead of owning the issue as our support team. Both
+  *SFT* and *DPO* correctly keep the resolution within our own support
+  channel; *DPO* edges out SFT by committing more explicitly to a fix
+  ("we will work together to rectify the situation") rather than just
+  requesting more details.
 
 **Q: "Can I get a replacement instead of a refund?"**
-- *Base* is flatly wrong here — it states replacements "are generally not
-  available," which contradicts real return-policy norms. *SFT* wins this
-  row by explicitly confirming ("Absolutely!") that replacements are
-  possible; *DPO*'s answer is friendlier in tone but never actually
-  confirms it either way.
+- *Base* wins this one — it's the only answer that actually says "Yes" up
+  front, even with slightly awkward phrasing ("a replacement item in
+  addition to a refund"). Both *SFT* and *DPO* just ask for more details
+  without ever confirming or denying whether replacements are possible —
+  a real weakness in both fine-tuned models on this specific question.
 
 ## 12. Final observations
-- Fine-tuning visibly shifted the model from generic deflection ("contact
-  customer service", "I am not able to provide real-time information") toward
-  specific, step-by-step, company-toned answers (referencing "Order History,"
-  concrete timeframes, a support phone number) by Stage 2, with DPO further
-  sharpening directness on most — not all — questions: SFT beat Base on
-  8/10 questions, and DPO was judged the best of all three on 7/10 questions.
-- The base model didn't just sound generic in a few places — it stated a
-  flatly **wrong** policy twice ("replacements are generally not available,"
-  a duplicate-charge instruction that wouldn't actually fix anything once
-  SFT introduced its own "Edit Order" mistake). DPO caught and corrected the
-  SFT mistake specifically, which is a more concrete example of DPO's value
-  than just "sounds nicer."
-- The one row where fine-tuning consistently lost (across both comparisons)
-  was a case where both SFT and DPO defaulted to asking a clarifying
-  question ("could you provide the tracking number?") instead of giving any
-  immediate guidance, while the untrained base model happened to offer a
-  generic-but-actionable checklist. A real, reproducible failure mode worth
-  knowing about rather than hiding.
+- Fine-tuning visibly shifted the model from generic deflection and
+  third-party-platform language ("contact the seller," scattered generic
+  channels) toward specific, step-by-step, company-toned answers
+  (referencing our own portal, "Order History," real phone numbers/hours)
+  on most — not all — questions: SFT beat Base on 7/10 questions, and DPO
+  was judged the best of all three on 6/10 questions.
+- The base model's most consequential flaw wasn't vagueness, it was
+  **misdirection** — on the duplicate-charge question, it told the
+  customer to contact *their own bank's* support rather than treating it
+  as our issue to resolve. Both fine-tuned models correctly kept ownership
+  of that issue with our own support team instead.
+- The rows where DPO didn't win the three-way comparison are honest,
+  reproducible cases of fine-tuning not strictly improving every single
+  time: Base won "replacement instead of a refund" outright (it's the only
+  one that actually answers yes/no), SFT won "item is damaged" (delivered
+  concrete options where DPO hedged) and "missed the delivery attempt"
+  (DPO was vague this run, no concrete commitment).
+- Comparing this rerun's verdicts to an earlier run on the same data/config
+  shows several rows flip which model won — not because anything broke, but
+  because generation is stochastic (temperature 0.7). That's an argument
+  for judging honestly every time rather than assuming last run's winner
+  automatically wins again.
 - DPO's training reward accuracy converged quickly on the 100-example
   preference set, which is expected for a small, clean preference dataset —
   but it's a training-data metric, not a guarantee every real answer improved,
@@ -269,6 +285,27 @@ and `reports/final_evaluation.md`.
   manually downloading each executed notebook directly from its own Colab
   tab instead — a good reminder that "most recently modified" is not the
   same as "the one I actually mean."
+- **A report-generation parser silently truncated real answers:** both
+  `instruction_finetuning.ipynb` and `dpo_alignment.ipynb` build each new
+  report by copying answers forward from the previous one, using a
+  line-by-line markdown parser (`if line.startswith('|')...`). That only
+  works if a table row fits on one physical line — but many answers contain
+  numbered steps with real line breaks, so the parser silently kept only
+  the first fragment of those answers and dropped the rest. It wasn't
+  visible as an error; the reports just looked plausible with shorter,
+  vaguer-looking Base/SFT answers than the models actually gave. Caught it
+  by comparing the same question's answer across two different report
+  files and noticing the text didn't match. Fixed by switching both
+  notebooks to an anchor-based parser that locates each of the 10 known
+  questions in the raw text and slices between them, instead of trusting
+  physical line boundaries — the same pattern already used to fix an
+  identical bug in `streamlit_qa_demo.ipynb`'s and
+  `entire_ft_summary_in_oneshot.ipynb`'s own report parsers. Re-checking
+  every row against the real, complete answers changed 3 of the 10
+  judgment verdicts in `reports/final_evaluation.md` and 1 in
+  `reports/sft_model_comparison.md` — a good reminder to verify report
+  data against its source before trusting a rendered table, especially
+  once a "fix" starts looking too clean.
 
 ## 14. Future improvements
 - Scale the preference dataset well beyond 100 pairs and add a wider range of
@@ -277,8 +314,8 @@ and `reports/final_evaluation.md`.
 - Try ORPO as an alternative to DPO and compare convergence/quality directly.
 - Expand evaluation beyond the fixed 10 questions with automated scoring
   (e.g. an LLM-as-judge pass) to catch regressions a small manual set might miss.
-- Add a lightweight web demo (Gradio/Streamlit) on top of `src/inference.py`
-  for live use instead of a script-only interface.
+- Extend `streamlit_qa_demo.ipynb` to run live model inference instead of
+  reading pre-computed answers, for a true real-time web demo.
 
 ## Running this project
 1. Upload/clone this repo into Google Drive.

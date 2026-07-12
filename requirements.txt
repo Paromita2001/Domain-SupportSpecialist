@@ -1,5 +1,7 @@
+# Training (notebooks/*.ipynb) -- do NOT pin trl, an old pin here caused a
+# real PicklingError during training since unsloth_zoo needs a modern trl
 unsloth
-trl<0.9.0
+unsloth_zoo
 peft
 accelerate
 bitsandbytes
@@ -7,3 +9,9 @@ xformers
 datasets
 transformers
 torch
+
+# Demo notebooks (entire_ft_summary_in_oneshot.ipynb, streamlit_qa_demo.ipynb)
+pandas
+matplotlib
+ipywidgets
+streamlit

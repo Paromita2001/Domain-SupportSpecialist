@@ -2,107 +2,118 @@
 
 | Question | Base Model Answer | Problem |
 |---|---|---|
-| How can I cancel my order after it has been placed? | To cancel an order that you have already placed, follow these steps:
+| How can I cancel my order after it has been placed? | To cancel an order that you've already placed, follow these steps:
 
-1. **Check Your Order Status**: First, check your order status to see if the order is still in progress or if it's completed. This information will help determine whether cancellation is possible.
+1. **Log in to your account**: Access the website or app where you made the purchase and log into your account.
 
-2. **Contact Customer Support**: If the order is not yet processed (completed), contact the customer support of the company from which you ordered. Provide them with your order details and ask for assistance on how to proceed with cancelling the order.
+2. **Navigate to the Order History**:
+   - On most websites, this is usually found under "My Account" or similar.
+   - In mobile apps, look for options like "Order History," "Past Orders," or "History."
 
-3. **Use Order Cancellation Features**: Some companies provide specific features within their website or app where customers can directly cancel orders. Check if there are any such options available and use them accordingly.
+3. **Review Your Order Details**: Check if there's any way to cancel an order without refunding money (if applicable).
 
-4. **Review Terms and Conditions**: Before proceeding, always review the terms and conditions provided when placing the order. Understanding what is allowed under those rules helps ensure that you are aware of all the implications before taking action.
+4. **Select Cancel Order**: Find the option to cancel the order. This may be labeled as "Cancel Order," "Return Order," or something similar.
 
-5. **Follow Up**: After initiating the cancellation process, keep track of the | Reads like generic advice for online shopping in general -- check status, contact support, review terms -- never actually names our own portal, order history page, or support contact. It also just trails off mid-sentence ('keep track of the...'). |
-| My package says delivered but I never received it, what do I do? | If your package was supposed to be delivered but you didn't receive it, there are several steps you can take:
+5. **Follow Instructions**: The system will guide you through the cancellation process. Typically, this involves entering some personal information and then confirming that you want to cancel the order.
 
-1. **Check Your Delivery Status**: Check the status of your delivery through the website or app that you used for tracking. Most shipping companies provide real-time updates on their deliveries.
+6. **Wait for Confirmation**: After following all instructions, wait for confirmation that the order | Trails off mid-sentence ("wait for confirmation that the order...") and never names our own portal, order history page, or support contact -- an entirely generic step list that could apply to any online retailer. |
+| My package says delivered but I never received it, what do I do? | If you've been notified that your package has been delivered but you haven't actually received it, there are several steps you can take to resolve the issue:
 
-2. **Contact Your Shipping Company**: Reach out to the company responsible for delivering your package. They should have an option to track the status and might also offer assistance if something went wrong.
+1. **Check Your Email or SMS Notification**: If you're receiving an email notification about delivery, make sure you have read and acknowledged this message.
 
-3. **Notify the Sender**: If the package was sent from a different address (like a forwarding service), contact them as well. Explain the situation and ask about how they plan to handle it.
+2. **Verify Delivery Confirmation**: Check if the courier company (like FedEx, UPS, DHL) has sent you a confirmation of delivery via text message or email.
 
-4. **Ask for a Refund or Replacement**: Depending on where the issue lies, you may need to request a refund or replacement from the sender or the shipping company.
+3. **Contact the Courier Company**: Reach out to the courier service provider for further assistance. They should be able to confirm whether your package was indeed delivered to your address.
 
-5. **Consider Using Different Delivery Services**: If the original service did not resolve the issue, consider using a different courier service for future shipments | Gives reasonable generic shipping-carrier troubleshooting steps, but the last suggestion ('use a different courier next time') is odd advice for us to give as the retailer -- we don't control which carrier the customer picks. |
-| How long does a refund take to appear on my card? | As an AI language model, I am not able to provide real-time information about your specific situation. Please contact the customer service of the payment method you used for the transaction or your bank for more detailed and accurate information regarding the time it takes for a refund to appear on your account. They can help you with the steps required to initiate the refund process and estimate how long it will take. | Doesn't actually answer -- punts the whole question to the customer's own bank/card issuer instead of giving any timeframe, even a rough one. |
-| Can I change the delivery address after checkout? | Yes, you can usually change your shipping address or delivery information after completing your purchase and before placing an order. This is typically done through the "My Account" section of the website where you placed the order.
+4. **Search for Your Package**: Use tracking services provided by the courier company to check where your package is located. This will help determine if it's still in transit or if it's already at your destination.
 
-Here's how it works in general:
+5. **Notify the Postal Service**: If the package hasn’t reached its intended location, contact your local post office or postal service. | Gives genuinely complete, actionable troubleshooting steps, but frames the whole answer around third-party carriers and the postal service rather than our own order-tracking system -- never once suggests contacting us directly. |
+| How long does a refund take to appear on my card? | The time it takes for a refund to appear on your credit card depends on several factors:
 
-1. Log into your account.
-2. Go to the My Orders page.
-3. Find the order that needs to be updated and click on it.
-4. Select the option for updating the billing/shipping address.
-5. Enter the new address details and submit the update.
+1. **Your Bank's Processing Time**: Your bank processes the transaction and refunds funds within its internal processing times. This can vary from 1-2 business days.
 
-It's important to note that some online retailers might have specific terms and conditions regarding changes to addresses, so always check their policies carefully. Some stores may require additional fees for changing the shipping address. | Answers with generic e-commerce steps ('My Account' section) and hedges with 'some online retailers might charge a fee' -- reads like it's describing a random store, not stating our own actual policy. |
-| The item I received is damaged, what are my options? | If you've received an item that's damaged, there are several steps and options you can consider:
+2. **Card Issuing Company’s Process Time**: The issuing company then processes this refund and sends it back to you through your account or directly to your bank, which may take additional time depending on how quickly they process transactions.
 
-1. **Contact the Seller**: Reach out to the seller or retailer who provided you with the item. Explain the issue and request a replacement or refund.
+3. **Your Payment Method**: Different payment methods (credit, debit, prepaid) might have different processing times due to their specific systems and protocols.
 
-2. **Check for Return Policies**: Review the return policy of the seller or retailer. Some sellers offer free returns within a certain period, while others may charge a fee.
+4. **Fraud Detection and Prevention Measures**: Some financial institutions implement fraud detection measures that can delay the refund if there is any suspicion of fraudulent activity.
 
-3. **Ask for a Replacement Item**: If you receive a new item, ask if it was damaged in transit as well. This can help ensure that you're not getting a second defective product.
+5. **Bank Policies and Regulations**: Your bank’s policies regarding refunds and security checks can also affect when you receive the refund.
 
-4. **Consider Shipping Costs**: If returning the damaged item involves shipping costs, these might be included in the price of the item. Alternatively, some retailers offer a discount on future purchases if you return the item.
+6. **External Factors**: External factors like network issues, delays in data | Lists generic banking factors instead of ever giving an actual number or timeframe, and trails off mid-list ("External factors like network issues, delays in data..."). |
+| Can I change the delivery address after checkout? | Yes, you can change your delivery address after checking out. Most online shopping platforms allow customers to update their shipping information during the order process. Here’s how it typically works:
 
-5. **Use Alternative Products**: If the damage is too extensive to repair, consider using a similar product from another retailer or manufacturer.
+1. **Review Your Order**: Go back to the confirmation page of your order and check the details.
+2. **Update Shipping Address**: Look for an option to edit or modify your shipping address. This is usually located in the "Shipping" section or similar.
+3. **Submit Changes**: Click on the appropriate button to save the new address.
 
-6. **Seek | Uses marketplace language ('contact the seller') as if we're a platform, not the retailer itself, and includes a confusingly worded step about checking if a *replacement* was 'also damaged in transit' before the customer has even received one. |
-| How do I track my order status? | To track your order's status, follow these steps:
+If you have any issues with changing your delivery address, you might want to contact customer support through the platform's help center. They should be able to assist you with updating your shipping information. Remember that some services may charge extra fees for changing addresses, so make sure to confirm these costs before proceeding. | Reasonable step outline, but hedges like a random third-party retailer ("some services may charge extra fees") and deflects unresolved issues to "the platform's help center" instead of naming our own support. |
+| The item I received is damaged, what are my options? | If you have received an item that is damaged or not as expected, there are several steps you can take to address the issue:
 
-1. **Log in to your account**: Access the website or app where you placed your order.
+1. **Contact the Seller**: Reach out to the seller or retailer through their customer service. Provide them with details about the damage and any photos if possible.
 
-2. **Navigate to the Order Status Section**:
-   - On most websites, this will be found under "My Account" or "Orders".
-   - In apps, it might be under "Order History" or similar.
+2. **Return the Item**: If the product was purchased from a store, follow their return policy. This may involve returning the item for a refund or exchange.
 
-3. **View Your Orders**:
-   - Look for an option that lists all of your past orders.
-   - If there is no direct link to view individual orders, you may need to select one and then click on its details to see more information.
+3. **Request a Replacement**: If the item is defective but still in its original condition, request a replacement. Some sellers offer this option directly on their website.
 
-4. **Check Delivery Details**:
-   - Some platforms provide detailed delivery addresses and estimated delivery times.
-   - Others might offer real-time tracking options using services like UPS, FedEx, or DHL.
+4. **Refund Process**: If you receive a refund, ensure it covers the cost of the purchase along with shipping fees. Check your bank statements or financial records to confirm the amount refunded.
 
-5. **Use Tracking Links (if available)**:
-   - Many online stores now allow customers to track their shipments through links provided during checkout. | Structurally fine but entirely generic -- 'most websites' and 'in apps' language never once names our actual portal or support channel. |
-| I was charged twice for one order, how do I fix this? | If you were charged twice for one order, it's important to understand why this might have happened and what steps you can take to resolve the issue. Here are some common reasons for such an occurrence:
+5. **Claim Insurance (if applicable)**: If you bought something online and it was shipped via courier, check if the courier company offers insurance coverage. In some cases, they will | Uses marketplace language ("contact the seller," "some sellers offer") as if we're a platform rather than the retailer itself, and trails off mid-sentence on the insurance-claim point. |
+| How do I track my order status? | To track your order status, follow these general steps:
 
-1. **Fraudulent Transactions**: Your payment method or card may have been compromised, leading to unauthorized charges on your account.
+1. **Check the Website**: Most online stores have their own website where you can check the status of your order. Look for an "Order Status" or "Track My Order" option on the site.
 
-2. **Billing Errors**: There could be a mistake in the billing process, either during processing or at the time of purchase.
+2. **Use Mobile Apps**: Many retailers also offer mobile apps that allow you to view and update the status of your orders. These apps often provide more detailed information than the website alone.
 
-3. **Duplicate Orders**: Sometimes, orders are placed multiple times unintentionally.
+3. **Contact Customer Service**: If the system does not show your order's status, contact the customer service department of the retailer directly. They will be able to give you real-time updates.
 
-### Steps to Resolve the Issue
+4. **Email Support**: Some companies offer email support which allows you to inquire about the status of your order.
 
-#### 1. Verify Your Payment Information:
-- Check if there were any transactions from your bank or credit card that occurred after placing the order.
-- Ensure all information entered into the checkout is correct (e.g., name, address, phone number).
+5. **Social Media**: Follow the retailer’s social media pages (if available) and look for updates regarding your order.
 
-#### 2. Contact Customer Support:
-- Reach out to the customer support team of the company where the order was placed. Provide them with detailed information about the duplicate charge(s | Leads with possible causes like fraud or the customer accidentally duplicate-ordering before considering it might simply be our own billing error -- a slightly defensive framing for what's usually a straightforward refund case. |
-| Can I get a replacement instead of a refund? | No, you cannot typically receive a replacement for an item that has been returned and refunded. The purpose of refunds is to compensate the customer who has made the purchase. Replacements are generally not available because they would involve additional costs and complexities in inventory management and logistics.
+6. **Newsletter/Subscription Services**: Subscribe to any newsletters provided by the retailer. This way, when they | Reads like generic e-commerce advice scattered across unrelated channels (website, app, social media, newsletter) instead of pointing to one clear method of our own, and trails off mid-sentence. |
+| I was charged twice for one order, how do I fix this? | If you have been charged twice for the same order, there could be several reasons for this issue:
 
-If you need a different product or have any other questions about your order, feel free to ask! We're here to help. | Flatly says replacements aren't available at all ('No, you cannot typically receive a replacement') -- this contradicts how real e-commerce replacement policies usually work (including the assignment's own example scenario), so this reads as a wrong, confidently-stated policy claim rather than just vague. |
-| What happens if I miss the delivery attempt? | If you miss a delivery attempt, it means that your package was not delivered to the intended address or recipient as expected. This can happen for various reasons such as incorrect information provided during the order process, issues with the carrier's system, or even human error.
+1. **Fraudulent Activity**: There might be fraudulent activity on your account, such as someone trying to make an unauthorized purchase or transaction.
 
-Here are some potential outcomes of missing a delivery attempt:
+2. **Duplicate Orders**: The system may not recognize that it has already processed the order and is processing it again.
 
-1. **No Delivery**: The package remains at the courier drop-off point without being picked up.
-2. **Delayed Delivery Attempts**: If the package is still in transit but delayed due to factors like traffic or weather conditions, the next attempt might be later than planned.
-3. **Returned Package**: In cases where the package may have been lost, stolen, or damaged during transit, the recipient might choose to return the item rather than accept it.
-4. **Contacting the Carrier**: The sender or receiver will typically need to contact their shipping company to inquire about the status and resolve any issues related to the missed delivery attempt.
+3. **Incorrect Order Processing**: There could be a mistake in the order processing system, where the order is being processed more than once.
 
-Handling these situations requires communication between all parties involved (the | Explains general shipping-carrier behavior reasonably well, but never says what OUR actual redelivery or pickup policy is, or how to reach us about it. |
+To resolve this issue, follow these steps:
+
+1. **Review Your Transactions**:
+   - Check your transaction history thoroughly.
+   - Look for any transactions that seem unusual or inconsistent with your usual behavior.
+
+2. **Contact Customer Support**:
+   - Reach out to your bank or financial institution's customer support team.
+   - Provide them with detailed information about the duplicated charges and your account details.
+
+3. **Request a Charge Adjustment**:
+   - Ask for a charge adjustment from your bank | Tells the customer to contact THEIR OWN bank's customer support rather than owning the issue as our support team -- a real deflection, not just vagueness -- and trails off before completing the resolution steps. |
+| Can I get a replacement instead of a refund? | Yes, you can often get a replacement item in addition to a refund if the issue with your purchase is due to a manufacturing defect or product malfunction. Retailers typically have policies that allow for returns and replacements within certain timeframes after receiving the returned items.
+
+However, the specific process and options available may vary depending on the retailer and country. If you're unsure about what's covered under your store's return policy, it's best to check directly with them through their customer service or website support. They will provide information tailored to your situation. | Opens with "Yes," but the phrasing ("a replacement item in addition to a refund") confusingly implies getting both rather than choosing one, and it hedges heavily by telling the customer to "check directly" with us instead of stating our actual policy. |
+| What happens if I miss the delivery attempt? | If you miss the delivery attempt, it means that your package was not delivered as expected on the date or time specified in the delivery request. Here's what might happen next:
+
+1. **Contact Your Shipping Provider**: Reach out to the company responsible for delivering your item (e.g., FedEx, UPS, DHL) to inquire about the status of your package.
+
+2. **Check Delivery Status**: Look into their website or app to see if there is an update on the delivery status. This can often be found under "Delivery History" or similar sections.
+
+3. **Notify Your Customer Service**: If they have no information after checking their system, consider contacting their customer service department to report the issue and ask for help resolving it.
+
+4. **Follow Up with the Carrier**: Depending on the carrier’s policies, you may need to follow up again until the package reaches its destination.
+
+5. **Consider Re-Ordering**: In some cases, especially for items like electronics where damage might occur during | Explains general shipping-carrier behavior reasonably well, but never states what OUR actual redelivery or pickup policy is, or how to reach us about it, and trails off mid-sentence. |
 | How do I apply a discount code after placing an order? | To apply a discount code after placing an order, follow these steps:
 
-1. Log in to your account and go to the "My Orders" section.
-2. Find the order you want to apply the discount to.
-3. Click on the order number or select it from the list of orders.
-4. On the order page, locate the "Apply Discount" option or similar feature.
-5. If available, enter the discount code into the designated field (usually provided as part of the payment options).
-6. Complete the payment process using the discount applied.
+1. **Review the Order**: Check your order confirmation page or email to see if you have received any discount offers.
 
-Please note that different e-commerce platforms may have slight variations in their user interface and functionality for applying discounts. Always refer to your specific platform's help center or support resources for precise instructions tailored to your chosen service provider. | Generic checkout instructions that end by telling the customer to go check their own platform's help center themselves -- deflects rather than actually answering on our behalf. |
+2. **Apply Discount Code**:
+   - If the discount is applied automatically during checkout (e.g., through a shopping cart), simply enter the discount code at the appropriate field in the payment process.
+   - Some platforms may require you to click on a specific button or link that appears when you're ready to check out. Look for "Apply Coupon" or similar wording and input the discount code there.
+
+3. **Follow Instructions**: Follow the instructions provided by your online store or platform regarding how to use the discount code. This might involve clicking on a button with a message like "Apply coupon," entering the code, then confirming it's applied.
+
+4. **Check Your Order Total**: After applying the discount, review your order total to ensure the discount has been correctly applied. Sometimes discounts can be applied | Mostly describes applying a discount DURING checkout rather than AFTER placing an order (the question actually asked), and trails off mid-sentence. |
